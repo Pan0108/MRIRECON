@@ -1,0 +1,111 @@
+{
+   "U-Net": {
+        "DEVICE": "cpu",
+        "BATCH_SIZE": 8,
+        "NUM_WORKERS": 6,
+        "LEARNING_RATE": 1e-4,
+        "WEIGHT_DECAY": 5e-5,
+        "NUM_EPOCHS": 1000,
+        "CHECKPOINT_PATH": "./model/U_Net.pth",
+        "RESUME_TRAINING": true,
+        "OUTPUT_DIR": "./output_UNET",
+        "IN_CHANNELS": 1,
+        "OUT_CHANNELS": 1,
+        "IMAGE_SIZE": 256,
+        "DATA_PATHS": {
+            "TRAIN_NOISY": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/undersampled",
+            "TRAIN_MASK": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/mask",
+            "TRAIN_CLEAN": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/full",
+            "VAL_NOISY": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/undersampled",
+            "VAL_MASK": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/mask",
+            "VAL_CLEAN": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/full"
+        }
+    },
+    "MoDL": {
+        "DEVICE": "cpu",
+        "data": {
+            "image_size": 256
+        },
+        "train": {
+            "batch_size": 4,
+            "learning_rate": 1e-4,
+            "epochs": 1000,
+            "save_model_path": "./MoDL.pth",
+            "checkpoint_path": "./MoDL_checkpoint.pth"
+        },
+        "optim": {
+            "num_iters": 8,
+            "channels": 256,
+            "lambda_init": 0.1
+        },
+        "NUM_WORKERS": 4,
+        "WEIGHT_DECAY": 1e-5,
+        "OUTPUT_DIR": "./output_MoDL",
+        "DATA_PATHS": {
+            "TRAIN_NOISY": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/undersampled",
+            "TRAIN_MASK": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/mask",
+            "TRAIN_CLEAN": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/full",
+            "VAL_NOISY": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/undersampled",
+            "VAL_MASK": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/mask",
+            "VAL_CLEAN": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/full"
+        }
+    },
+    "Transformer": {
+        "DEVICE": "cpu",
+        "BATCH_SIZE": 4,
+        "NUM_WORKERS": 4,
+        "LEARNING_RATE": 1e-4,
+        "WEIGHT_DECAY": 1e-5,
+        "NUM_EPOCHS": 500,
+        "CHECKPOINT_PATH": "./Transformer_checkpoint.pth",
+        "SAVE_MODEL_PATH": "./Transformer.pth",
+        "OUTPUT_DIR": "./output_transformer",
+        "IMAGE_SIZE": 256,
+        "DATA_PATHS": {
+           "TRAIN_NOISY": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/undersampled",
+            "TRAIN_MASK": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/mask",
+            "TRAIN_CLEAN": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/full",
+            "VAL_NOISY": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/undersampled",
+            "VAL_MASK": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/mask",
+            "VAL_CLEAN": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/full"
+        },
+        "model": {
+            "patch_size": 16,
+            "in_channels": 1,
+            "embed_dim": 512,
+            "num_heads": 16,
+            "num_layers": 12,
+            "num_residual_blocks": 8
+        }
+    },
+    "ISTA":{
+        "DEVICE": "cpu",
+        "data": {
+            "image_size": 256
+        },
+        "train": {
+            "batch_size": 8,
+            "learning_rate": 1e-4,
+            "epochs": 1000,
+            "save_model_path": "./ISTA.pth",
+            "checkpoint_path": "./ISTA_checkpoint.pth"
+        },
+        "optim": {
+            "num_iters": 8,
+            "channels": 256,
+            "rho_init": 0.1
+        },
+        "NUM_WORKERS": 4,
+        "WEIGHT_DECAY": 1e-4,
+        "OUTPUT_DIR": "./output_ISTA",
+        "DATA_PATHS": {
+            "TRAIN_NOISY": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/undersampled",
+            "TRAIN_MASK": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/mask",
+            "TRAIN_CLEAN": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/train/full",
+            "VAL_NOISY": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/undersampled",
+            "VAL_MASK": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/mask",
+            "VAL_CLEAN": "C:\\Users\\lixing.pan\\Desktop\\data\\data_modl/val/full"
+        }
+    }
+
+}
